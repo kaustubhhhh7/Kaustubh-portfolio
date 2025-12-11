@@ -1,0 +1,19 @@
+{
+   "name":"Kaustubh Portfolio",
+   "short_name":"Portfolio",
+   "icons":[
+      {
+         "src":"/avatar-favicon.png",
+         "sizes":"192x192",
+         "type":"image/png"
+      },
+      {
+         "src":"/avatar-favicon.png",
+         "sizes":"512x512",
+         "type":"image/png"
+      }
+   ],
+   "theme_color":"#1b1b1b",
+   "background_color":"#1b1b1b",
+   "display":"standalone"
+}

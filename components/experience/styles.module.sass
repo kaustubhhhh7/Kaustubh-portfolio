@@ -1,0 +1,567 @@
+.experienceSection
+    display: flex
+    flex-direction: column
+    gap: clamp(48px, 6vw, 96px)
+    margin-top: 0px
+    width: 100%
+    max-width: min(1900px, 100%)
+    padding: 0 clamp(24px, 3vw, 48px)
+    overflow-x: hidden
+    position: relative
+
+.sectionHeading
+    font-size: clamp(3rem, 12vw, 6rem)
+    font-weight: 900
+    text-transform: uppercase
+    letter-spacing: 0.02em
+    color: rgba(123, 231, 255, 0.95)
+    text-shadow: 0 10px 30px rgb(0, 0, 0)
+    display: flex
+    flex-wrap: wrap
+    gap: 0.35em
+    line-height: 1.2
+    opacity: 1
+    transform: translateZ(0)
+    will-change: transform, opacity
+    backface-visibility: hidden
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+    &::after
+        content: ''
+        display: block
+        width: 100%
+        height: 1px
+        margin-top: clamp(12px, 2vw, 18px)
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0))
+        opacity: 0
+        transform: scaleX(0.6)
+        transform-origin: left
+        animation: headingUnderline 0.8s ease-out forwards
+        animation-delay: 0.35s
+
+    span:first-child
+        color: #5df3ff
+        text-shadow: none
+        transform: translateZ(0)
+        will-change: transform
+
+    span:last-child
+        color: transparent
+        -webkit-text-stroke: 2px #ffffff
+        text-stroke: 2px #ffffff
+        opacity: 1
+        letter-spacing: 0.045em
+        text-shadow: 0 0 8px rgba(0, 0, 0, 0.4)
+        transform: translateZ(0)
+        will-change: transform
+        -webkit-font-smoothing: antialiased
+        -moz-osx-font-smoothing: grayscale
+
+.experiencePanel
+    padding: clamp(40px, 5vw, 56px)
+    position: relative
+    background: linear-gradient(135deg, rgba(8, 12, 20, 0.96), rgba(6, 10, 18, 0.98))
+    border-radius: 40px
+    border: 1px solid rgba(255, 255, 255, 0.12)
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06)
+    backdrop-filter: blur(20px)
+    -webkit-backdrop-filter: blur(20px)
+    min-height: 100vh
+    overflow: visible
+
+.topSection
+    display: grid
+    grid-template-columns: 1.1fr 0.9fr
+    gap: clamp(40px, 5vw, 64px)
+    margin-bottom: clamp(56px, 7vw, 80px)
+    align-items: start
+
+    @media screen and (max-width: 1024px)
+        grid-template-columns: 1fr
+        gap: clamp(40px, 5vw, 56px)
+        margin-bottom: clamp(48px, 6vw, 64px)
+
+.certificationsSection
+    display: flex
+    flex-direction: column
+    gap: clamp(16px, 2vw, 20px)
+    padding: clamp(18px, 2.2vw, 24px)
+    background: rgba(255, 255, 255, 0.02)
+    border-radius: 20px
+    border: 1px solid rgba(255, 255, 255, 0.06)
+    backdrop-filter: blur(10px)
+    -webkit-backdrop-filter: blur(10px)
+
+.certificationsHeading
+    font-size: clamp(1.2rem, 2.2vw, 1.5rem)
+    font-weight: 700
+    text-transform: uppercase
+    letter-spacing: 0.1em
+    color: rgba(123, 231, 255, 0.98)
+    margin: 0 0 clamp(6px, 0.8vw, 10px) 0
+    padding-bottom: clamp(12px, 1.5vw, 16px)
+    border-bottom: 2px solid rgba(81, 203, 255, 0.25)
+    position: relative
+    line-height: 1.3
+
+    &::after
+        content: ''
+        position: absolute
+        bottom: -2px
+        left: 0
+        width: 60px
+        height: 2px
+        background: linear-gradient(90deg, rgba(81, 203, 255, 0.9), rgba(58, 209, 179, 0.6), transparent)
+
+.certificationsList
+    list-style: none
+    margin: 0
+    padding: 0
+    display: flex
+    flex-direction: column
+    gap: clamp(12px, 1.5vw, 16px)
+
+.certificationItem
+    display: flex
+    align-items: flex-start
+    gap: clamp(10px, 1.3vw, 14px)
+    padding: clamp(12px, 1.5vw, 16px) clamp(14px, 1.8vw, 18px)
+    background: rgba(255, 255, 255, 0.04)
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    border-radius: 12px
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1)
+    cursor: default
+    position: relative
+    overflow: hidden
+
+    &::before
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        bottom: 0
+        width: 3px
+        background: linear-gradient(180deg, rgba(81, 203, 255, 0.6), rgba(58, 209, 179, 0.6))
+        opacity: 0
+        transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1)
+
+    &:hover
+        background: rgba(255, 255, 255, 0.06)
+        border-color: rgba(81, 203, 255, 0.3)
+        transform: translateX(4px)
+        box-shadow: 0 4px 16px rgba(81, 203, 255, 0.15), 0 0 0 1px rgba(81, 203, 255, 0.1)
+
+        &::before
+            opacity: 1
+
+.checkmark
+    color: rgba(81, 203, 255, 0.95)
+    font-size: clamp(1rem, 1.3vw, 1.2rem)
+    font-weight: 700
+    flex-shrink: 0
+    margin-top: 1px
+    line-height: 1
+    text-shadow: 0 0 8px rgba(81, 203, 255, 0.4)
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1)
+
+    .certificationItem:hover &
+        color: rgba(123, 231, 255, 1)
+        text-shadow: 0 0 12px rgba(81, 203, 255, 0.6)
+        transform: scale(1.1)
+
+.certificationText
+    color: rgba(255, 255, 255, 0.88)
+    font-size: clamp(0.85rem, 1.1vw, 0.95rem)
+    line-height: 1.6
+    flex: 1
+    font-weight: 400
+    letter-spacing: 0.01em
+    transition: color 0.35s cubic-bezier(0.22, 1, 0.36, 1)
+
+    .certificationItem:hover &
+        color: rgba(255, 255, 255, 0.95)
+
+.carouselPanel
+    width: 100%
+    max-width: 800px
+    margin: 0 auto
+    position: relative
+    z-index: 1
+    pointer-events: none
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: clamp(6px, 0.8vw, 10px)
+
+    > *
+        pointer-events: auto
+        width: 100%
+
+.graphicsContainer
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: 0
+    padding: 0
+
+.graphicIconsWrapper
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+
+.graphicIcons
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: clamp(12px, 1.5vw, 20px)
+    flex-shrink: 0
+    flex-wrap: wrap
+    animation: none !important
+    transform: none !important
+    will-change: auto
+
+.iconItem
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 48px
+    height: 48px
+    flex-shrink: 0
+    padding: 0
+    border-radius: 12px
+    background: rgba(255, 255, 255, 0.03)
+    border: 1px solid rgba(255, 255, 255, 0.08)
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1)
+    cursor: default
+
+    &:hover
+        background: rgba(255, 255, 255, 0.05)
+        border-color: rgba(81, 203, 255, 0.3)
+        transform: translateY(-4px)
+        box-shadow: 0 4px 12px rgba(81, 203, 255, 0.2)
+
+    svg
+        width: 24px
+        height: 24px
+        flex-shrink: 0
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1)
+
+    &:hover svg
+        stroke: rgba(123, 231, 255, 0.9)
+        transform: scale(1.1)
+
+.cardsSection
+    width: 100%
+    margin-top: clamp(40px, 5vw, 56px)
+    padding-top: clamp(32px, 4vw, 48px)
+    border-top: 1px solid rgba(255, 255, 255, 0.08)
+    position: relative
+
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        width: 120px
+        height: 1px
+        background: linear-gradient(90deg, transparent, rgba(81, 203, 255, 0.4), transparent)
+
+.experienceList
+    margin: 0
+    padding: 0 0 clamp(24px, 3vw, 32px) 0
+    list-style: none
+    display: flex
+    flex-direction: row
+    gap: clamp(24px, 3vw, 32px)
+    overflow-x: auto
+    overflow-y: hidden
+    scroll-behavior: smooth
+    -webkit-overflow-scrolling: touch
+    scrollbar-width: thin
+    scrollbar-color: rgba(81, 203, 255, 0.6) rgba(255, 255, 255, 0.05)
+
+    &::-webkit-scrollbar
+        height: 4px
+        margin-top: clamp(16px, 2vw, 24px)
+
+    &::-webkit-scrollbar-track
+        background: rgba(255, 255, 255, 0.05)
+        border-radius: 8px
+        margin-top: clamp(16px, 2vw, 24px)
+
+    &::-webkit-scrollbar-thumb
+        background: linear-gradient(90deg, rgba(81, 203, 255, 0.8), rgba(58, 209, 179, 0.8))
+        border-radius: 8px
+        transition: all 0.3s ease
+        box-shadow: 0 1px 4px rgba(81, 203, 255, 0.3)
+
+        &:hover
+            background: linear-gradient(90deg, rgba(81, 203, 255, 1), rgba(58, 209, 179, 1))
+            box-shadow: 0 2px 6px rgba(81, 203, 255, 0.5)
+            transform: scaleY(1.1)
+
+    @media screen and (max-width: 768px)
+        gap: clamp(16px, 2vw, 20px)
+
+    .experienceRole
+        position: relative
+        cursor: pointer
+        border-radius: 0
+        background: rgba(15, 17, 22, 0.8)
+        border: 1px solid rgba(255, 255, 255, 0.1)
+        overflow: hidden
+        transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1)
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3)
+        display: flex
+        flex-direction: column
+        height: 380px
+        min-width: 300px
+        max-width: 350px
+        flex-shrink: 0
+        align-items: stretch
+
+        &:hover
+            transform: translateY(-6px)
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(81, 203, 255, 0.3)
+            border-color: rgba(81, 203, 255, 0.4)
+
+            .imageContainer
+                transform: scale(1.05)
+
+            .cardImage
+                transform: scale(1.08)
+
+            .role
+                color: rgba(123, 231, 255, 0.95)
+
+        .imageContainer
+            position: relative
+            width: 100%
+            height: 200px
+            flex-shrink: 0
+            overflow: hidden
+            background: rgba(255, 255, 255, 0.05)
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)
+            border-radius: 0
+
+        .cardImage
+            object-fit: cover
+            object-position: center
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)
+            border-radius: 0
+            width: 100%
+            height: 100%
+
+        .cardContent
+            padding: 18px 22px
+            display: flex
+            flex-direction: column
+            gap: 14px
+            flex: 1
+            min-height: 0
+            overflow: hidden
+
+        .cardTags
+            display: flex
+            gap: 8px
+            flex-wrap: wrap
+
+        .tag
+            padding: 4px 12px
+            border-radius: 4px
+            background: rgba(255, 255, 255, 0.1)
+            color: rgba(255, 255, 255, 0.7)
+            font-size: 0.75rem
+            font-weight: 600
+            text-transform: uppercase
+            letter-spacing: 0.05em
+
+        .cardDate
+            font-size: 0.75rem
+            color: rgba(255, 255, 255, 0.5)
+            font-weight: 500
+            letter-spacing: 0.05em
+            text-transform: uppercase
+
+        .role
+            margin: 0
+            font-size: 1.05rem
+            font-weight: 700
+            line-height: 1.3
+            color: rgba(255, 255, 255, 0.9)
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1)
+            letter-spacing: 0.01em
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+
+@media screen and (max-width: 768px)
+    .experienceList .experienceRole
+        min-width: 280px
+        max-width: 320px
+
+.modalOverlay
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(0, 0, 0, 0.92)
+    backdrop-filter: blur(16px)
+    -webkit-backdrop-filter: blur(16px)
+    z-index: 1000
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: clamp(20px, 3vw, 40px)
+    overflow: hidden
+    -webkit-overflow-scrolling: touch
+
+.modalContent
+    position: relative
+    width: 100%
+    max-width: 700px
+    max-height: 80vh
+    height: fit-content
+    background: linear-gradient(135deg, rgba(8, 12, 20, 0.98), rgba(6, 10, 18, 0.99))
+    border-radius: 20px
+    border: 1px solid rgba(255, 255, 255, 0.12)
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.06)
+    backdrop-filter: blur(20px)
+    -webkit-backdrop-filter: blur(20px)
+    overflow: visible
+    display: flex
+    flex-direction: column
+    animation: modalSlideIn 0.4s cubic-bezier(0.22, 1, 0.36, 1)
+    margin: auto
+
+    @media screen and (max-width: 768px)
+        max-width: 90%
+        max-height: 85vh
+        border-radius: 18px
+
+.closeButtonWrapper
+    display: flex
+    justify-content: flex-end
+    position: sticky
+    top: 0
+    z-index: 15
+    background: transparent
+    padding-top: clamp(12px, 1.5vw, 18px)
+    padding-right: clamp(12px, 1.5vw, 18px)
+    flex-shrink: 0
+
+.closeButton
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    background: rgba(255, 255, 255, 0.12)
+    border: 1px solid rgba(255, 255, 255, 0.25)
+    color: rgba(255, 255, 255, 0.95)
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1)
+    backdrop-filter: blur(12px)
+    -webkit-backdrop-filter: blur(12px)
+
+    &:hover
+        background: rgba(255, 255, 255, 0.2)
+        border-color: rgba(81, 203, 255, 0.6)
+        color: rgba(123, 231, 255, 1)
+        transform: scale(1.1)
+        box-shadow: 0 4px 16px rgba(81, 203, 255, 0.3)
+
+    &:active
+        transform: scale(0.95)
+
+.modalImageContainer
+    position: relative
+    width: 100%
+    aspect-ratio: 16 / 9
+    max-height: 28vh
+    overflow: hidden
+    background: rgba(255, 255, 255, 0.05)
+    flex-shrink: 0
+
+.modalImage
+    object-fit: cover
+    object-position: center
+
+.modalTextContent
+    padding: clamp(18px, 2vw, 24px) clamp(20px, 2.5vw, 28px) clamp(20px, 2.5vw, 28px)
+    display: flex
+    flex-direction: column
+    gap: clamp(10px, 1.2vw, 14px)
+    overflow: visible
+    flex: 0 1 auto
+    min-height: 0
+    background: transparent
+
+    @media screen and (max-width: 768px)
+        padding: clamp(16px, 1.8vw, 20px) clamp(18px, 2vw, 22px) clamp(20px, 2.2vw, 24px)
+        gap: clamp(8px, 1vw, 12px)
+
+.modalTags
+    display: flex
+    gap: 10px
+    flex-wrap: wrap
+    margin-top: clamp(12px, 1.5vw, 18px)
+
+.modalDate
+    font-size: clamp(0.75rem, 1vw, 0.9rem)
+    color: rgba(255, 255, 255, 0.65)
+    font-weight: 600
+    letter-spacing: 0.08em
+    text-transform: uppercase
+    margin-top: clamp(6px, 0.8vw, 10px)
+
+.modalRole
+    margin: 0
+    font-size: clamp(1.3rem, 2.5vw, 2rem)
+    font-weight: 800
+    line-height: 1.25
+    color: rgba(255, 255, 255, 0.98)
+    letter-spacing: -0.02em
+    margin-top: clamp(8px, 1vw, 12px)
+    margin-bottom: clamp(4px, 0.6vw, 8px)
+
+.modalDuties
+    color: rgba(255, 255, 255, 0.88)
+    font-size: clamp(0.9rem, 1.1vw, 1rem)
+    line-height: 1.65
+    margin: 0
+    margin-top: clamp(10px, 1.2vw, 14px)
+    padding-right: clamp(6px, 0.8vw, 12px)
+    word-wrap: break-word
+    overflow-wrap: break-word
+    max-height: none
+    overflow: visible
+
+@keyframes modalSlideIn
+    0%
+        transform: scale(0.95)
+        opacity: 0
+    100%
+        transform: scale(1)
+        opacity: 1
+
+@keyframes headingUnderline
+    0%
+        opacity: 0
+        transform: scaleX(0.2)
+    100%
+        opacity: 1
+        transform: scaleX(1)
+
+
