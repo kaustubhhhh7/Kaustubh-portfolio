@@ -1,0 +1,31 @@
+:root {
+    --font-size: 14px;
+    --font-size-small: 12px;
+    --font-family: -apple-system, system-ui, 'Helvetica Neue', Roboto, sans-serif;
+    --letter-spacing: 0.00938em;
+    --line-height: 1.5;
+
+    --container-width: 800px;
+    --border-radius: 4px;
+}
+
+:root {
+    --highlight-color: #ffc107;
+
+    --body-background: linear-gradient(180deg, #000000 0%, #001a3c 100%);
+    --container-background: #2c2d2e;
+
+    --text-color-primary: #e1e3e6;
+    --text-color-secondary: #a5a5a9;
+    --text-color-third: #76787a;
+
+    --box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+
+    /* Additional theme variables */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #2a2a2a;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --card-bg: rgba(15, 17, 22, 0.8);
+    --card-border: rgba(255, 255, 255, 0.1);
+}
