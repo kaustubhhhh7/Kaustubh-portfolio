@@ -8,6 +8,8 @@ import Footer from '@/components/footer'
 import Header from '@/components/header'
 import StarField from '@/components/star-field'
 
+import ContactForm from '@/components/contact-form'
+
 import '@/styles/theme.css'
 import '@/styles/globals.sass'
 
@@ -91,6 +93,8 @@ const App = ({ Component, pageProps }: AppProps) => {
             <Component {...pageProps} />
         </main>
 
+        <ContactForm />
+        
         <Footer />
 
         {process.env.NODE_ENV === 'production' && (
