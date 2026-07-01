@@ -3,20 +3,20 @@ import { motion, useInView } from 'framer-motion'
 import styles from './styles.module.sass'
 
 export const ContactForm: React.FC = () => {
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+    const [formData, setFormData] = useState({ name: '', email: '', message: '', source: '' })
     const ref = React.useRef(null)
     const isInView = useInView(ref, { once: true, amount: 0.2 })
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target
         setFormData(prev => ({ ...prev, [name]: value }))
     }
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        const mailtoLink = `mailto:kaustubh7205@gmail.com?subject=Contact from ${formData.name}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`
+        const mailtoLink = `mailto:kaustubh7205@gmail.com?subject=Contact from ${formData.name}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nSource: ${formData.source || 'Not specified'}\n\nMessage:\n${formData.message}`)}`
         window.location.href = mailtoLink
-        setFormData({ name: '', email: '', message: '' })
+        setFormData({ name: '', email: '', message: '', source: '' })
     }
 
     return (
@@ -38,6 +38,18 @@ export const ContactForm: React.FC = () => {
                         <div className={styles.formGroup}>
                             <label htmlFor="email_input" className={styles.formLabel}>Email address</label>
                             <input type="email" id="email_input" name="email" value={formData.email} onChange={handleInputChange} placeholder="e.g. example@gmail.com" className={styles.input} required />
+                        </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="source_input" className={styles.formLabel}>Where did you find me?</label>
+                            <select id="source_input" name="source" value={formData.source} onChange={handleInputChange} className={styles.select}>
+                                <option value="" disabled>Select an option</option>
+                                <option value="Social Media">Social Media</option>
+                                <option value="College">College</option>
+                                <option value="GitHub">GitHub</option>
+                                <option value="LinkedIn">LinkedIn</option>
+                                <option value="Friend or Colleague">Friend or Colleague</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="message_input" className={styles.formLabel}>Message</label>
