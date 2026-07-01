@@ -46,10 +46,10 @@ export const data: ProjectType[] = [
     },
     {
         icon: 'agency',
-        title: 'Core Agency',
+        title: 'Core3 Agency',
         link: 'https://core123.netlify.app/',
         description:
-            'Built a full-stack agency portfolio website with animated UI, service listings, project showcases, testimonials, and contact management for a professional digital presence. Full-Stack Agency Portfolio Website'
+            'Founders of Core3 Agency. Built a full-stack agency portfolio website with animated UI, service listings, project showcases, testimonials, and contact management for a professional digital presence.'
     },
     {
         icon: 'trees',

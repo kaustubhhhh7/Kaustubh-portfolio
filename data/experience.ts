@@ -7,6 +7,7 @@ import imageB from '@/components/EXP/B.png'
 import imageC from '@/components/EXP/C.png'
 import imageD from '@/components/EXP/D.png'
 import imageE from '@/components/EXP/E.png'
+import imageCore3 from '@/components/EXP/core3.png'
 
 export type RoleSkillsType = {
     area: string
@@ -51,5 +52,11 @@ export const experience: ExperienceType[] = [
         role: 'Automation EXPO 2024 - Student Participant',
         duties: 'Attended the 17th India International Trade Show at Bombay Exhibition Centre, Mumbai. Explored groundbreaking innovations from industry leaders including Yamaha, Taiwan Excellence, Finder, Epson, HIKROBOT, Beckhoff, Reer, Siemens, and Keyence. Gained insights into smart automation devices, IoT gateways, edge computing, data analytics, and industrial connectivity solutions.',
         image: imageE
+    },
+    {
+        period: ['01/01/2024'],
+        role: 'Founder of Core3 Agency',
+        duties: 'Provides dynamic websites, software solutions, IT automations, apps, and comprehensive digital services to empower businesses.',
+        image: imageCore3
     }
 ]
