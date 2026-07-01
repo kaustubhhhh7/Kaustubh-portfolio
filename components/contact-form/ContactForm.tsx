@@ -41,7 +41,7 @@ export const ContactForm: React.FC = () => {
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="source_input" className={styles.formLabel}>Where did you find me?</label>
-                            <select id="source_input" name="source" value={formData.source} onChange={handleInputChange} className={styles.select}>
+                            <select id="source_input" name="source" value={formData.source} onChange={handleInputChange} className={styles.select} required>
                                 <option value="" disabled>Select an option</option>
                                 <option value="Social Media">Social Media</option>
                                 <option value="College">College</option>
