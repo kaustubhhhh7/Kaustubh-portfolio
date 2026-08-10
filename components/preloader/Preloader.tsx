@@ -25,7 +25,7 @@ export const Preloader: React.FC = () => {
         }
     }
 
-    const itemVariants = {
+    const itemVariants: any = {
         hidden: { opacity: 0, y: 80, rotateX: -90 },
         show: { 
             opacity: 1, 
