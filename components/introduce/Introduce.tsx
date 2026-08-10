@@ -250,8 +250,8 @@ export const Introduce: React.FC = () => {
                         Contact me
                     </motion.button>
                     <motion.a
-                        href="/resume.docx"
-                        download="Kaustubh_Ghadshi_Resume.docx"
+                        href="/Kaustubh_Ghadshi_Resume.pdf"
+                        download="Kaustubh_Ghadshi_Resume.pdf"
                         className={styles.heroResumeButton}
                         variants={itemVariants}
                         whileHover={{ scale: 1.05, y: -2 }}
